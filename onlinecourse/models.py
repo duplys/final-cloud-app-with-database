@@ -104,7 +104,7 @@ class Enrollment(models.Model):
 class Question(models.Model):
     # Foreign key to lesson
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE) 
-    course = models.OneToManyField(Course)
+    course = models.ManyToManyField(Course)
     # question text
     question = models.TextField()
     # question grade/mark
