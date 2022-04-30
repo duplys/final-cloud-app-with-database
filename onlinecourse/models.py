@@ -103,7 +103,8 @@ class Enrollment(models.Model):
     # Other fields and methods you would like to design
 class Question(models.Model):
     # Foreign key to lesson
-   lesson = models.OneToManyField(Lesson) 
+    lesson = models.ForeignKey(Lesson) 
+    course = models.OneToManyField(Course)
     # question text
     question = models.TextField()
     # question grade/mark
