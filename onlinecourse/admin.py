@@ -4,10 +4,12 @@ from .models import Course, Lesson, Instructor, Learner, Question, Choice, Submi
 
 # <HINT> Register QuestionInline and ChoiceInline classes here
 class QuestionInline(admin.ModelAdmin):
-    flunk = "ddd"
+    model = Question
+    extra = 5
     
 class ChoiceInline(admin.ModelAdmin):
-    flunk = "flunk"
+    model = Choice
+    extra = 5
 
 class LessonInline(admin.StackedInline):
     model = Lesson
@@ -27,10 +29,9 @@ class LessonAdmin(admin.ModelAdmin):
 
 
 # <HINT> Register Question and Choice models here
-
 admin.site.register(Course, CourseAdmin)
 admin.site.register(Lesson, LessonAdmin)
 admin.site.register(Instructor)
 admin.site.register(Learner)
-admin.site.register(Question)
-admin.site.register(Choice)
+admin.site.register(Question, QuestionInline)
+admin.site.register(Choice, ChoiceInline)
