@@ -11,7 +11,6 @@ class ChoiceInline(admin.StackedInline):
 class QuestionInline(admin.StackedInline):
     model = Question
     extra = 5
-    inlines = [ChoiceInline]
     
     
 class LessonInline(admin.StackedInline):
