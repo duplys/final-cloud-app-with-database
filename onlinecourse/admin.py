@@ -17,6 +17,8 @@ class LessonInline(admin.StackedInline):
     model = Lesson
     extra = 5
 
+class QuestionAdmin(admin.ModelAdmin):
+    inlines = [QuestionInline]
 
 # Register your models here.
 class CourseAdmin(admin.ModelAdmin):
@@ -36,5 +38,5 @@ admin.site.register(Course, CourseAdmin)
 admin.site.register(Lesson, LessonAdmin)
 admin.site.register(Instructor)
 admin.site.register(Learner)
-admin.site.register(Question, QuestionInline)
+admin.site.register(Question, QuestionAdmin)
 admin.site.register(Choice)
