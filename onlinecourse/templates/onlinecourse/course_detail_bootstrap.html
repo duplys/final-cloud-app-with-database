@@ -65,7 +65,8 @@
 
             <!-- <HINT> If user is authenticated, show course exam with a list of question -->
             {% if user.is_authenticated %}
-         <h1>USER AUTHENTICATED!!!</h1>
+               <h1>USER is AUTHENTICATED!!!</h1>
+               <p>{{ user.first_name }}</p>
             {% endif %}
 
             <!-- <HINT> Each example will have many questions -->
